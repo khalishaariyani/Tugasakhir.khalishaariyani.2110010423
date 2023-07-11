@@ -3,8 +3,8 @@ object Form1: TForm1
   Top = 162
   Width = 928
   Height = 428
-  Caption = 'Form1'
-  Color = clBtnFace
+  Caption = 'LOGIN'
+  Color = clGradientActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -19,53 +19,85 @@ object Form1: TForm1
     Width = 506
     Height = 22
     Caption = 'SISTEM INFORMASI DATA SEKOLAH PERMATA INDAH'
+    Color = clHighlightText
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
+    ParentColor = False
     ParentFont = False
   end
-  object btnsiswa: TButton
-    Left = 208
+  object btn1: TButton
+    Left = 64
     Top = 104
     Width = 113
-    Height = 33
-    Caption = 'DATA SISWA'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Times New Roman'
-    Font.Style = [fsBold]
-    ParentFont = False
+    Height = 57
+    Caption = 'DATA KELAS'
     TabOrder = 0
+    OnClick = btn1Click
   end
-  object btnwakel: TButton
-    Left = 352
+  object btn2: TButton
+    Left = 280
     Top = 104
-    Width = 121
-    Height = 33
-    Caption = 'DATA WALI KELAS'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Times New Roman'
-    Font.Style = [fsBold]
-    ParentFont = False
+    Width = 113
+    Height = 57
+    Caption = 'DATA SISWA'
     TabOrder = 1
+    OnClick = btn2Click
   end
-  object btnortu: TButton
-    Left = 496
+  object btn3: TButton
+    Left = 504
     Top = 104
-    Width = 121
-    Height = 33
+    Width = 113
+    Height = 57
     Caption = 'DATA ORANG TUA'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Times New Roman'
-    Font.Style = [fsBold]
-    ParentFont = False
     TabOrder = 2
+    OnClick = btn3Click
+  end
+  object btn4: TButton
+    Left = 728
+    Top = 104
+    Width = 113
+    Height = 57
+    Caption = 'DATA HUBUNGAN'
+    TabOrder = 3
+    OnClick = btn4Click
+  end
+  object btn5: TButton
+    Left = 64
+    Top = 264
+    Width = 113
+    Height = 57
+    Caption = 'DATA POIN'
+    TabOrder = 4
+    OnClick = btn5Click
+  end
+  object btn6: TButton
+    Left = 280
+    Top = 264
+    Width = 113
+    Height = 57
+    Caption = 'DATA SEMESTER'
+    TabOrder = 5
+    OnClick = btn6Click
+  end
+  object btn7: TButton
+    Left = 504
+    Top = 264
+    Width = 113
+    Height = 57
+    Caption = 'DATA USER'
+    TabOrder = 6
+    OnClick = btn7Click
+  end
+  object btn8: TButton
+    Left = 728
+    Top = 264
+    Width = 113
+    Height = 57
+    Caption = 'DATA WALI KELAS'
+    TabOrder = 7
+    OnClick = btn8Click
   end
 end

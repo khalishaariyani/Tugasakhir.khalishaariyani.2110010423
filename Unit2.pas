@@ -58,6 +58,7 @@ editclear;
 editenabled;
 
 edt1.Enabled:= True;
+edt2.Enabled:= True;
 
 
 

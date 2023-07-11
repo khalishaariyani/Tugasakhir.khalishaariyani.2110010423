@@ -1,10 +1,10 @@
 object Form8: TForm8
-  Left = 220
-  Top = 189
+  Left = 303
+  Top = 132
   Width = 928
   Height = 480
   Caption = 'User'
-  Color = clBtnFace
+  Color = clSkyBlue
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -62,9 +62,9 @@ object Form8: TForm8
   object lbl5: TLabel
     Left = 152
     Top = 176
-    Width = 33
+    Width = 34
     Height = 15
-    Caption = 'status'
+    Caption = 'Status'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -105,6 +105,7 @@ object Form8: TForm8
     Top = 264
     Width = 441
     Height = 145
+    DataSource = DataSource1
     TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -167,70 +168,12 @@ object Form8: TForm8
     TabOrder = 10
     OnClick = btn6Click
   end
-  object con1: TZConnection
-    ControlsCodePage = cGET_ACP
-    UTF8StringsAsWideField = False
-    AutoEncodeStrings = False
-    HostName = 'Localhost'
-    Port = 3306
-    Database = 'db_visual2'
-    User = 'root'
-    Protocol = 'mysql'
-    LibraryLocation = 
-      'C:\Users\windows 10\Documents\SEMESTER 4\PEMOGRAMAN VISUAL 2 ( M' +
-      'ATERI)\projekakhir\libmysql.dll'
-    Left = 696
-    Top = 32
-  end
-  object zqry1: TZQuery
-    Connection = con1
-    SQL.Strings = (
-      'select * from kustomer')
-    Params = <>
-    Left = 744
-    Top = 80
-    object zqry1idkustomer: TIntegerField
-      DisplayWidth = 16
-      FieldName = 'idkustomer'
-      Required = True
-    end
-    object zqry1nmkustomer: TStringField
-      DisplayWidth = 35
-      FieldName = 'nmkustomer'
-      Size = 50
-    end
-    object zqry1telp: TStringField
-      DisplayWidth = 19
-      FieldName = 'telp'
-      Size = 40
-    end
-    object zqry1alamat: TStringField
-      DisplayWidth = 25
-      FieldName = 'alamat'
-      Size = 15
-    end
-    object zqry1kota: TStringField
-      DisplayWidth = 16
-      FieldName = 'kota'
-      Size = 15
-    end
-    object zqry1kodepos: TStringField
-      DisplayWidth = 11
-      FieldName = 'kodepos'
-      Size = 15
-    end
-  end
-  object ds1: TDataSource
-    DataSet = zqry1
-    Left = 656
-    Top = 88
-  end
   object frxDBDataset1: TfrxDBDataset
     UserName = 'frxDBDataset1'
     CloseDataSource = False
-    DataSource = ds1
-    Left = 656
-    Top = 136
+    DataSet = ZQuery1
+    Left = 672
+    Top = 128
   end
   object frxReport1: TfrxReport
     Version = '4.0.11'
@@ -241,14 +184,14 @@ object Form8: TForm8
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45100.581568460600000000
-    ReportOptions.LastChange = 45100.611634756950000000
+    ReportOptions.LastChange = 45100.611634756900000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
       ''
       'end.')
     Left = 744
-    Top = 136
+    Top = 128
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -280,7 +223,7 @@ object Form8: TForm8
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Memo.UTF8 = (
-            'LAPORAN DATA KUSTOMER')
+            'LAPORAN DATA USER')
           ParentFont = False
         end
       end
@@ -289,7 +232,7 @@ object Form8: TForm8
         Top = 98.267780000000000000
         Width = 793.701300000000000000
         object Memo2: TfrxMemoView
-          Left = 75.590600000000000000
+          Left = 124.724490000000000000
           Top = 15.118120000000000000
           Width = 37.795300000000000000
           Height = 18.897650000000000000
@@ -306,7 +249,41 @@ object Form8: TForm8
           ParentFont = False
         end
         object Memo3: TfrxMemoView
-          Left = 113.385900000000000000
+          Left = 162.519790000000000000
+          Top = 15.118120000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'USERNAME')
+          ParentFont = False
+        end
+        object Memo8: TfrxMemoView
+          Left = 257.008040000000000000
+          Top = 15.118120000000000000
+          Width = 98.267780000000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'PASSWORD')
+          ParentFont = False
+        end
+        object Memo9: TfrxMemoView
+          Left = 355.275820000000000000
           Top = 15.118120000000000000
           Width = 151.181200000000000000
           Height = 18.897650000000000000
@@ -319,28 +296,11 @@ object Form8: TForm8
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'NAMA')
+            'NAMA LEVEL')
           ParentFont = False
         end
-        object Memo4: TfrxMemoView
-          Left = 264.567100000000000000
-          Top = 15.118120000000000000
-          Width = 113.385900000000000000
-          Height = 18.897650000000000000
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'TELEPHONE')
-          ParentFont = False
-        end
-        object Memo5: TfrxMemoView
-          Left = 377.953000000000000000
+        object Memo10: TfrxMemoView
+          Left = 506.457020000000000000
           Top = 15.118120000000000000
           Width = 151.181200000000000000
           Height = 18.897650000000000000
@@ -353,166 +313,143 @@ object Form8: TForm8
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'ALAMAT')
-          ParentFont = False
-        end
-        object Memo6: TfrxMemoView
-          Left = 529.134200000000000000
-          Top = 15.118120000000000000
-          Width = 151.181200000000000000
-          Height = 18.897650000000000000
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'KOTA')
-          ParentFont = False
-        end
-        object Memo7: TfrxMemoView
-          Left = 680.315400000000000000
-          Top = 15.118120000000000000
-          Width = 75.590600000000000000
-          Height = 18.897650000000000000
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'KODEPOS')
+            'STATUS')
           ParentFont = False
         end
       end
       object MasterData1: TfrxMasterData
-        Height = 26.456710000000000000
+        Height = 22.677180000000000000
         Top = 192.756030000000000000
         Width = 793.701300000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         RowCount = 0
-        object Memo8: TfrxMemoView
-          Left = 75.590600000000000000
+        object Memo4: TfrxMemoView
+          Left = 124.724490000000000000
           Width = 37.795300000000000000
-          Height = 26.456710000000000000
-          DataField = 'idkustomer'
+          Height = 18.897650000000000000
+          DataField = 'id'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -11
+          Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset1."idkustomer"]')
+            '[frxDBDataset1."id"]')
           ParentFont = False
         end
-        object Memo9: TfrxMemoView
-          Left = 113.385900000000000000
+        object Memo5: TfrxMemoView
+          Left = 162.519790000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          DataField = 'username'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBDataset1."username"]')
+          ParentFont = False
+        end
+        object Memo6: TfrxMemoView
+          Left = 257.008040000000000000
+          Width = 98.267780000000000000
+          Height = 18.897650000000000000
+          DataField = 'password'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBDataset1."password"]')
+          ParentFont = False
+        end
+        object Memo7: TfrxMemoView
+          Left = 355.275820000000000000
           Width = 151.181200000000000000
-          Height = 26.456710000000000000
-          DataField = 'nmkustomer'
+          Height = 18.897650000000000000
+          DataField = 'level'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -11
+          Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset1."nmkustomer"]')
-          ParentFont = False
-        end
-        object Memo10: TfrxMemoView
-          Left = 264.567100000000000000
-          Width = 113.385900000000000000
-          Height = 26.456710000000000000
-          DataField = 'telp'
-          DataSet = frxDBDataset1
-          DataSetName = 'frxDBDataset1'
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -11
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBDataset1."telp"]')
+            '[frxDBDataset1."level"]')
           ParentFont = False
         end
         object Memo11: TfrxMemoView
-          Left = 377.953000000000000000
+          Left = 506.457020000000000000
           Width = 151.181200000000000000
-          Height = 26.456710000000000000
-          DataField = 'alamat'
+          Height = 18.897650000000000000
+          DataField = 'status'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -11
+          Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset1."alamat"]')
-          ParentFont = False
-        end
-        object Memo12: TfrxMemoView
-          Left = 529.134200000000000000
-          Width = 151.181200000000000000
-          Height = 26.456710000000000000
-          DataField = 'kota'
-          DataSet = frxDBDataset1
-          DataSetName = 'frxDBDataset1'
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -11
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBDataset1."kota"]')
-          ParentFont = False
-        end
-        object Memo13: TfrxMemoView
-          Left = 680.315400000000000000
-          Width = 75.590600000000000000
-          Height = 26.456710000000000000
-          DataField = 'kodepos'
-          DataSet = frxDBDataset1
-          DataSetName = 'frxDBDataset1'
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -11
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBDataset1."kodepos"]')
+            '[frxDBDataset1."status"]')
           ParentFont = False
         end
       end
     end
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cGET_ACP
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'smacintaibu'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 
+      'C:\Users\windows 10\Documents\SEMESTER 4\PEMOGRAMAN VISUAL 2 ( M' +
+      'ATERI)\projekakhir\libmysql.dll'
+    Left = 752
+    Top = 72
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from user')
+    Params = <>
+    Left = 808
+    Top = 128
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    Left = 872
+    Top = 128
   end
 end

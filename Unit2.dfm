@@ -4,7 +4,7 @@ object Form2: TForm2
   Width = 928
   Height = 480
   Caption = 'Data kelas'
-  Color = clBtnFace
+  Color = clSkyBlue
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -42,9 +42,9 @@ object Form2: TForm2
   object lbl1: TLabel
     Left = 352
     Top = 24
-    Width = 107
+    Width = 148
     Height = 26
-    Caption = 'Data kelas'
+    Caption = 'DATA KELAS'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -24
